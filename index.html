@@ -20,18 +20,13 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-		<script src="jquery-2.1.0.js"></script>
-		<script src="underscore.js"></script>
+		<script src="js/jquery-2.1.0.js"></script>
+		<script src="js/underscore.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script src="mousetrap.js"></script>
-		<script src="snake.js"></script>
-		<script src="apple.js"></script>
-		<script src="space_snake.js"></script>	
-		<script>
-			$(document).ready( function() {
-				SpaceSnake.newGame();
-			})
-		</script>
+		<script src="js/mousetrap.js"></script>
+		<script src="js/snake.js"></script>
+		<script src="js/game-items.js"></script>
+		<script src="js/space_snake.js"></script>	
   </head>
   <body>
 		<div class="container">
@@ -44,6 +39,12 @@
 			</div>
 			
 			<div class="game-content">
+				<script>
+					$(document).ready( function() {
+						SpaceSnake.newGame();
+					})
+				</script>
+				
 				<div class="row">
 					<div class="col-sm-8" id="status">Press N to start a new game.</div>
 					<div class="col-sm-4" id="score"></div>

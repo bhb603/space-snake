@@ -1,9 +1,13 @@
 (function(root){
   
   var SpaceSnake = root.SpaceSnake = (root.SpaceSnake || {})
+  
+  // CONSTANTS
   var MAX_SPEED = 10;
   var MIN_SPEED = 5;
   var TURN_ANGLE = 90;
+  
+  // SNAKE
   
   var Snake = SpaceSnake.Snake = function(startPos) {
     this.head = new SnakeHead(startPos);
@@ -33,6 +37,7 @@
     });
   }
   
+  //SNAKE HEAD
   var SnakeHead = SpaceSnake.SnakeHead = function(pos) {
     this.pos = pos;
     this.velocity = { angle: -Math.PI/2, mag: 5 }
@@ -114,6 +119,7 @@
     ctx.fill();
   }
 
+  //SNAKE SEGMENT
   var SnakeSegment = SpaceSnake.SnakeSegment = function(pos) {
     this.pos = pos;
     this.radius = 5;
