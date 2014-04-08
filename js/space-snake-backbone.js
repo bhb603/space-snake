@@ -14,11 +14,12 @@ SpaceSnake.Router = Backbone.Router.extend({
     var view = new SpaceSnake.PlayView();
     view.render();
     $('.game-content').html(view.$el);
-    SpaceSnake.newGame();
+    this.currentGame = SpaceSnake.newGame();
   },
   
   help: function(){
     this.toggleNavBar('help');
+    this.currentGame && this.currentGame.gameOver();
     var view = new SpaceSnake.HelpView();
     view.render();
     $('.game-content').html(view.$el);
@@ -26,6 +27,7 @@ SpaceSnake.Router = Backbone.Router.extend({
   
   highScores: function(){
     this.toggleNavBar('high-scores');
+    this.currentGame && this.currentGame.gameOver();
     var view = new SpaceSnake.HighScoresView();
     view.render();
     $('.game-content').html(view.$el);
