@@ -22,39 +22,83 @@
     <![endif]-->
 		<script src="js/jquery-2.1.0.js"></script>
 		<script src="js/underscore.js"></script>
+		<script src="js/backbone.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/mousetrap.js"></script>
 		<script src="js/snake.js"></script>
 		<script src="js/game-items.js"></script>
-		<script src="js/space_snake.js"></script>	
+		<script src="js/space_snake.js"></script>
+		
+		<script>
+			$(document).ready( function() {
+				var router = new SpaceSnake.Router();
+				Backbone.history.start();
+				router.navigate('play', {trigger: true});
+			});
+		</script>
   </head>
   <body>
 		<div class="container">
 			<div class="header">
 				<ul class="nav nav-pills pull-right">
-					<li class="active"><a href="#">Play</a></li>
-					<li><a href="#">High Scores</a></li>
+					<li class="active"><a href="#play">Play</a></li>
+					<li><a href="#help">Help</a></li>
+					<li><a href="#high-scores">High Scores</a></li>
 				</ul>
 				<h3 class="text-muted">Space Snake</h3>
 			</div>
 			
 			<div class="game-content">
-				<script>
-					$(document).ready( function() {
-						SpaceSnake.newGame();
-					})
-				</script>
-				
-				<div class="row">
-					<div class="col-sm-8" id="status">Press N to start a new game.</div>
-					<div class="col-sm-4" id="score"></div>
-				</div>
-				
-				<canvas id="game-canvas">
-					Your browser doesn't support HTML5 canvas! Please upgrade to a modern browser like Chrome!
-				</canvas>
 			</div>
 		</div>
-
+		
+		
+		<script type="text/html" id="play-template">
+			<div class="row">
+			  <div class="col-sm-8" id="status">Press N to start a new game.</div> 
+			  <div class="col-sm-4" id="score"></div>
+			</div> 
+		  <canvas id="game-canvas"> 
+		  	Your browser does not support HTML5 canvas! Please upgrade to a modern browser like Chrome!
+			</canvas>
+		</script>
+		
+		<script type="text/html" id="help-template">
+	  	<p> 
+	 	 	Space Snake is a mashup of Snake and Asteroids. The object is to eat as many apples as possible while avoiding asteroids.
+			</p> 
+			
+	  	<h3>Controls</h3> 
+  		<ul>
+				<li>Up: accelerate</li>
+				<li>Down: decelerate</li>
+				<li>Left/Right: turn</li> 
+  			<li>Space: fire</li>
+			</ul>
+	  
+			<h3>Tips</h3>
+		  <p>Turning is from the perspective of the snake.</p>
+		  <p>Asteroids start generating after 15 seconds.</p>
+		  <p>Your snake can wrap over itself and move off screen without dying. Only getting hit by an asteroid is fatal.</p>
+		  <p>The only way to accumulate points is to eat apples and grow.</p>
+		</script>
+		
+		<script type="text/html" id="high-scores-template">
+			<p>high scorez coming soon...</p>
+			<table class="table">
+				<thead>
+				<tr><th>#</th><th>Name</th><th>Score</th></tr>
+				</thead>
+				<tbody>
+					<tr><td>1</td><td>---</td><td>---</td></tr>
+					<tr><td>2</td><td>---</td><td>---</td></tr>
+					<tr><td>3</td><td>---</td><td>---</td></tr>
+					<tr><td>4</td><td>---</td><td>---</td></tr>
+					<tr><td>5</td><td>---</td><td>---</td></tr>
+				</tbody>
+			</table>
+		</script>
+		
+		<script src="js/space-snake-backbone.js"></script>
   </body>
 </html>
