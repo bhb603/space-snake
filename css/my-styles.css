@@ -1,0 +1,29 @@
+
+#status, #score {
+  padding: 10px;
+}
+
+#status {
+  margin-left: 0;
+  padding-left: 0;
+}
+#score {
+  margin-right: 0;
+  background: #777;
+  color: #fff;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.row {
+  width: 500px;
+  margin: auto;
+  padding: 0;
+}
+
+#game-canvas {
+  width: 500px;
+  height: 400px;
+  display: block;
+  margin: 20px auto;
+}

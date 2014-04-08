@@ -34,7 +34,7 @@
     Mousetrap.bind('space', game.fire.bind(game));
     
     game.renderStartScreen();
-    $("#status").html("Press P to begin");
+    $("#status").html("Press P to play");
     return game;
   }
 
