@@ -1,6 +1,6 @@
 # Space Snake
 
-Live @ [brianbuchholz.com/space-snake](http://www.brianbuchholz.com/space-snake)
+Live @ [bhb603.github.io/space-snake/](http://bhb603.github.io/space-snake/)
 
 ## About
 
